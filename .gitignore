@@ -1,0 +1,21 @@
+node_modules/
+.DS_Store
+dist/
+lib/
+es/
+
+# editor config
+.vscode/
+.idea
+*.iml
+*.swp
+*.swo
+
+# istanbul
+coverage
+
+# Logs
+logs
+*.log
+# eslint
+.eslintcache
