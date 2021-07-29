@@ -1,4 +1,4 @@
-simple-micro-app为简易版的micro-app，主要用于学习微前端，不能用于生产环境。
+simple-micro-app为简化版的micro-app，主要用于学习微前端，不能用于生产环境。
 
 micro-app代码地址：https://github.com/micro-zoe/micro-app
 
