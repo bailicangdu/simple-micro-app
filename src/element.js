@@ -1,3 +1,4 @@
+import CreateApp, { appInstanceMap } from './app'
 
 // 自定义元素
 class MyElement extends HTMLElement {
@@ -10,8 +11,15 @@ class MyElement extends HTMLElement {
   }
 
   connectedCallback () {
-    // 元素被插入到DOM时执行，此时去加载子应用的静态资源并渲染
-    console.log('micro-app has connected')
+    // 创建微应用实例
+    const app = new CreateApp({
+      name: this.name,
+      url: this.url,
+      container: this,
+    })
+
+    // 记入缓存，用于后续功能
+    appInstanceMap.set(this.name, app)
   }
 
   disconnectedCallback () {
@@ -20,8 +28,12 @@ class MyElement extends HTMLElement {
   }
 
   attributeChangedCallback (attrName, oldVal, newVal) {
-    // 元素属性发生变化时执行，可以获取name、url等属性的值
-    console.log(`attribute ${attrName}: ${newVal}`)
+    // 分别记录name及url的值
+    if (attrName === 'name' && !this.name && newVal) {
+      this.name = newVal
+    } else if (attrName === 'url' && !this.url && newVal) {
+      this.url = newVal
+    }
   }
 }
 
