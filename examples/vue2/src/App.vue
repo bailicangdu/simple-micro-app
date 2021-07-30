@@ -20,7 +20,6 @@ export default {
   color: #2c3e50;
   background: #fff;
   width: 100%;
-  padding: 10px;
   box-sizing: border-box;
 }
 body {

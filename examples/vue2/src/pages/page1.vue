@@ -1,6 +1,7 @@
 <template>
   <div>
-    <PublicHead />
+    <PublicHead :version="version"/>
+    <router-link to='/page2'>page2</router-link>
     <micro-app name='app' url='http://localhost:3001/'></micro-app>
   </div>
 </template>
