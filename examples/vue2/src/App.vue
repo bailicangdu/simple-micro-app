@@ -18,11 +18,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: #fff;
+
   width: 100%;
   box-sizing: border-box;
 }
 body {
   margin: 0;
+  background: #f1f1f1 !important;
 }
 </style>

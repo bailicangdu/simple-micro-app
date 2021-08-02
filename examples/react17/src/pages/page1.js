@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../logo.svg';
 import './page1.css';
 
@@ -18,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        <Link to='/page2'>跳转page2</Link>
       </header>
     </div>
   );

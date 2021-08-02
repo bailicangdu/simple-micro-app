@@ -6,7 +6,7 @@ const Page2 = lazy(() => import(/* webpackChunkName: "page2" */ './pages/page2')
 
 function AppRouter () {
   return (
-    <BrowserRouter basename={'/react17/'}>
+    <BrowserRouter basename='/react17/'>
       <Switch>
         <Route path="/" exact>
           <Page1 />

@@ -15,3 +15,7 @@ code {
 body, micro-app-body, #root, .App {
   height: 100%;
 }
+
+body {
+  background: #f1f1f1;
+}
