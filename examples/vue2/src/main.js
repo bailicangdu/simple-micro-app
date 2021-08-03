@@ -4,6 +4,8 @@ import routes from './router'
 import App from './App.vue'
 import SimpleMicroApp from 'simple-micro-app'
 
+window.globalStr='parent'
+
 SimpleMicroApp.start()
 
 Vue.config.productionTip = false
@@ -17,3 +19,5 @@ new Vue({
   router,
   render: h => h(App),
 }).$mount('#app')
+
+

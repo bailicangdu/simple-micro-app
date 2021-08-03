@@ -1,4 +1,5 @@
 import loadHtml from './source'
+import Sandbox from './sandbox'
 
 // 微应用实例
 export const appInstanceMap = new Map()
@@ -11,6 +12,7 @@ export default class CreateApp {
     this.container = container // micro-app元素
     this.status = 'loading'
     loadHtml(this)
+    this.sandbox = new Sandbox(name)
   }
 
   status = 'created' // 组件状态，包括 created/loading/mounted/unmount
@@ -48,9 +50,10 @@ export default class CreateApp {
     // 将格式化后的DOM结构插入到容器中
     this.container.appendChild(fragment)
 
+    this.sandbox.start()
     // 执行js
     this.source.scripts.forEach((info) => {
-      (0, eval)(info.code)
+      (0, eval)(this.sandbox.bindScope(info.code))
     })
 
     // 标记应用为已渲染
