@@ -13,7 +13,7 @@ code {
 }
 
 body, micro-app-body, #root, .App {
-  height: 120vh;
+  height: 100%;
 }
 
 body {

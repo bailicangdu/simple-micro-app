@@ -37,6 +37,7 @@ export default {
     margin: 10px 40px;
     padding: 30px 0;
     background-color: #ccc;
+    height: 400px;
   }
 
   .toggle-btn {

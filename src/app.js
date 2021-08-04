@@ -69,6 +69,7 @@ export default class CreateApp {
     this.status = 'unmount'
     // 清空容器
     this.container = null
+    this.sandbox.stop()
     // destory为true，则删除应用
     if (destory) {
       appInstanceMap.delete(this.name)
