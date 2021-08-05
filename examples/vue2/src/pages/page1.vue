@@ -3,7 +3,8 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld :msg="'基座应用vue@' + version" />
     <div @click="toggleMicroApp" class='toggle-btn'>展示/隐藏</div>
-    <micro-app name='app' url='http://localhost:3001/' v-if='showapp'></micro-app>
+    <div class='text-color'>我是基座应用的文字</div>
+    <micro-app name='app' url='http://localhost:3001/' v-if='showapp' id='micro-app-app1'></micro-app>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ export default {
 </script>
 
 <style>
-  micro-app[name=app] {
+  #micro-app-app1 {
     display: block;
     border: 1px solid #000;
     margin: 10px 40px;
@@ -51,4 +52,9 @@ export default {
     margin: 0 auto;
     user-select: none;
   }
+
+  .text-color {
+    color: red;
+  }
+
 </style>

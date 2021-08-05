@@ -20,6 +20,7 @@ function App() {
           Learn React
         </a>
         <Link to='/page2'>跳转page2</Link>
+        <div className='text-color'>我是子应用的文字</div>
       </header>
     </div>
   );
