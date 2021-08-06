@@ -4,7 +4,14 @@
     <HelloWorld :msg="'基座应用vue@' + version" />
     <div @click="toggleMicroApp" class='toggle-btn'>展示/隐藏</div>
     <div class='text-color'>我是基座应用的文字</div>
-    <micro-app name='app' url='http://localhost:3001/' v-if='showapp' id='micro-app-app1'></micro-app>
+    <micro-app
+      name='app'
+      url='http://localhost:3001/'
+      v-if='showapp'
+      id='micro-app-app1'
+      :data='data'
+      @datachange='handleDataChange'
+    ></micro-app>
   </div>
 </template>
 
@@ -18,14 +25,25 @@ export default {
     return {
       version: Vue.version,
       showapp: true,
+      data: {},
     }
   },
   components: {
     HelloWorld
   },
+  mounted () {
+    setTimeout(() => {
+      this.data = {
+        name: '来自基座应用的数据'
+      }
+    }, 2000)
+  },
   methods: {
     toggleMicroApp () {
       this.showapp = !this.showapp
+    },
+    handleDataChange (e) {
+      console.log('接受数据：', e.detail.data)
     }
   }
 }

@@ -50,7 +50,7 @@ export default class CreateApp {
     // 将格式化后的DOM结构插入到容器中
     this.container.appendChild(fragment)
 
-    this.sandbox.start()
+    this.sandbox.start(this.name)
     // 执行js
     this.source.scripts.forEach((info) => {
       (0, eval)(this.sandbox.bindScope(info.code))
